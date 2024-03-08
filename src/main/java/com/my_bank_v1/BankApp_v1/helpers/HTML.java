@@ -2,10 +2,10 @@ package com.my_bank_v1.BankApp_v1.helpers;
 
 public class HTML {
 
-    public static String htmlEmailTemplate(String token, String code){
+    public static String htmlEmailTemplate(String token, int code){
 
         // Verify Account
-        String url = "http://127.0.0.1:8070/verify?token" + token + "&code=" + code;
+        String url = "http://127.0.0.1:8070/verify?token=" + token + "&code=" + code;
 
         String emailtemplate = "<!DOCTYPE html>\n" +
                 "<html lang='en'>\n" +
@@ -82,7 +82,7 @@ public class HTML {
                 "        </div>\n" +
                 "    </body>\n" +
                 "</html>";
-        return "";
+        return emailtemplate;
 
     }
 

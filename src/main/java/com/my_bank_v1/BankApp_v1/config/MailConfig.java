@@ -20,7 +20,7 @@ public class MailConfig {
         //set mail credentials
         emailConfig.setHost("mail.smtp2go.com");
         emailConfig.setPort(2525);
-        emailConfig.setUsername("no-reply@mybank.com");
+        emailConfig.setUsername("no-reply@advancebank.me");
         emailConfig.setPassword("bVh4RM6SR0DTnXg4");
 
         return emailConfig;

@@ -12,6 +12,25 @@
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
+
+            <!-- Display Message -->
+            <c:if test="${requestScope.passwordMisMatch != null}">
+                <div class="alert alert-danger text-center border border-danger">
+                    <b>${requestScope.passwordMisMatch}</b>
+                </div>
+            </c:if>
+            <!-- End of Display Message -->
+
+            <!-- Display Message -->
+            <c:if test="${requestScope.success != null}">
+                <div class="alert alert-success text-center border border-success">
+                    <b>${requestScope.success}</b>
+                </div>
+            </c:if>
+            <!-- End of Display Message -->
+
+
+
             <form:form action="/register" modelAttribute="registerUser">
                 <div class="social-container">
                     <a href="#" class="social"><i class="fa fa-facebook fa-2x"></i></a>
@@ -34,6 +53,12 @@
                     <form:input type="password" path="password" placeholder="Password" />
                     <form:errors path="password" class="text-white bg-danger"/>
                 </div>
+                <div>
+                    <input type="password" name="confirm_password" placeholder="Confirm Password" />
+                    <small class="text-white bg-danger">${confirm_pass}</small>
+                </div>
+
+
                 <button type="submit">Sign Up</button>
                 <!-- Back to Login Button -->
                 <button type="button" onclick="window.location.href='/login';">Back to Login</button>
