@@ -1,0 +1,492 @@
+
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #444;
+  background-color: #f3f3f3;
+  height: 100vh;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.welcome {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.logo {
+  height: 5.25rem;
+}
+
+.login {
+  display: flex;
+}
+
+.login__input {
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 12rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+}
+
+.login__input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.login__input::placeholder {
+  color: #bbb;
+}
+
+.login__btn {
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login__btn:hover,
+.login__btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+  outline: none;
+  color: #777;
+}
+
+/* MAIN */
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+
+
+
+  transition: all 1s;
+}
+
+.balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.balance__label,
+.task_label{
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+}
+
+.balance__date {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.balance__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+/* USERINFO */
+.userinfo {
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.userinfo__row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #907434;
+}
+
+.userinfo__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.userinfo__value {
+  font-size: 1.7rem;
+}
+
+.userinfo__type--user {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.userinfo__type--account-name {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.userinfo__type--account-number {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.userinfo__type--account-type {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.userinfo__type--account-balance {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.userinfo__type--created-at {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+/* SUMMARY */
+.summary {
+  grid-row: 5 / 6;
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.summary__value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.summary__value--in,
+.summary__value--interest {
+  color: #66c873;
+}
+
+.summary__value--out {
+  color: #f5465d;
+}
+
+.btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* OPERATIONS */
+.operation {
+  border-radius: 1rem;
+  padding: 3rem 4rem;
+  color: #333;
+}
+
+.operation--transfer {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.operation--add-account {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.operation--close {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.4rem 1rem;
+}
+
+
+/* End exceptions */
+
+.form__input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+
+.form__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.form__label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.form__btn {
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.8rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.form__btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.logout-timer {
+  padding: 0 0.3rem;
+  margin-top: 1.9rem;
+  text-align: right;
+  font-size: 1.25rem;
+}
+
+
+
+/* Taskbar */
+.taskbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.taskbar__bank-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.taskbar__nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.taskbar__link {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.taskbar__link:hover {
+  text-decoration: underline;
+}
+
+.taskbar__link--logout {
+  padding: 0 1rem;
+  border-radius: 10rem;
+  background-color: #f3f3f3;
+}
+
+.taskbar__user-name {
+  font-size: 1.4rem;
+  color: #333;
+}
+
+
+.form--transfer-inner {
+  position:relative;
+}
+
+.form--transfer-deposit,
+.form--transfer-payment,
+.form--transfer-interac {
+  margin-top:50px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  box-sizing: border-box;
+  border: 0px solid #ccc;
+  border-radius: 10px;
+  background: linear-gradient(0deg, rgba(253,187,45,1) 17%, rgba(176,73,192,1) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.operation--add-account {
+  display: none;
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.operation--close {
+  display: none;
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+
+.form--transfer-deposit.visible,
+.form--transfer-payment.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+.main-content {
+  transition: opacity 0.5s ease, visibility 0.5s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-content.hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+.operation--add-account.visible,
+.operation--close.visible {
+  display: block;
+  opacity: 1;
+  pointer-events: all;
+}
+
+
+.payment-history-link {
+  display: none; /* Start with the table hidden */
+  text-align: center;
+  margin-top:20vh;
+}
+.payment-history-table {
+  margin: 2rem auto;
+  width: auto;
+  max-width: 90%; /* Adjust based on preference */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  background: linear-gradient(0deg, rgba(253,187,45,1) 17%, rgba(176,73,192,1) 100%);
+  border-radius: 10px;
+}
+
+.payment-history-table th,
+.payment-history-table td {
+ padding: 1.5rem;
+  border: 1px solid #eaeaea; /* Light border for each cell */
+  font-size: 1.5rem;
+  color: #333; /* Text color */
+}
+}
+
+.payment-history-table th {
+  background-color: #ffb003; /* Header background color */
+  color: white; /* Header text color */
+}
+
+.payment-history-link:not(.hidden) {
+  display: block; /* Show the table when not hidden */
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+
+  .app {
+    grid-template-columns: 1fr;
+    margin: 2rem auto;
+    gap: 1rem;
+  }
+
+  .balance {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .balance__value {
+    font-size: 3rem;
+  }
+
+ .userinfo, .operation, .summary {
+  max-height: none;
+  overflow-y: visible; /* this prevents internal scrolling */
+}
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+ .taskbar {
+    flex-direction: row; /* Ensure the taskbar is horizontal */
+    justify-content: space-between; /* Spread out the elements */
+    padding: 1rem; /* Adjust padding as needed */
+  }
+  
+  .taskbar__nav {
+    flex-direction: row; /* Ensure the navigation links are in a row */
+    gap: 0.5rem; /* Adjust the space between links as needed */
+  }
+  
+.form--transfer-inner {
+  position: relative; /* or 'static' to ensure it's in the normal flow of the document */
+  opacity: 1; /* Make the form fully visible */
+  pointer-events: all; /* Ensure the form can be interacted with */
+}
+
+.form--transfer-deposit,
+.form--transfer-payment,
+.form--transfer-interac  {
+  opacity: 1; /* Make the form fully visible */
+  pointer-events: all; /* Ensure the form can be interacted with */
+  position: relative; /* or 'static' to ensure it's in the normal flow of the document */
+  margin-top: 0; /* Adjust the margin as needed */
+}  
+  .payment-history-table th, .payment-history-table td {
+    padding: 0.8rem 1rem;
+  }
+}

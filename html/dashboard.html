@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <title>MyBank | Dashboard</title>
+
+  </head>
+  <body>
+  
+    <!-- TOP NAVIGATION -->
+
+    <!-- Taskbar -->
+    <header class="taskbar">
+      <div class="taskbar__bank-name">My Bank</div>
+      <nav class="taskbar__nav">
+	  
+	    <a href="#" class="taskbar__link" id="dashboard-link">Dashboard</a>
+        <a href="#" class="taskbar__link" id="payment-history-link">Payment History</a>
+        <a href="#" class="taskbar__link" id="transaction-history-link">Transaction History</a>
+        <a href="#" class="taskbar__link taskbar__link--logout" id="sign-out-link">Sign out</a>
+      </nav>
+      <div class="taskbar__user-name">Welcome, User</div>
+    </header>
+	
+	<div class="payment-history-link">
+	  <table class="payment-history-table">
+		<thead>
+		  <tr>
+			<th>Payment Name</th>
+			<th>Payment Amount</th>
+			<th>Payment Date and Time</th>
+			<th>Reference Number</th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+			<td>Electric Bill</td>
+			<td>$120.00</td>
+			<td>03/05/2024, 10:00 AM</td>
+			<td>H8774562126</td>
+		  </tr>
+		  <tr>
+			<td>Water Bill</td>
+			<td>$80.50</td>
+			<td>03/05/2024, 12:30 PM</td>
+			<td>H8774562125</td>
+		  </tr>
+		  <tr>
+			<td>Internet Bill</td>
+			<td>$60.99</td>
+			<td>02/28/2024, 09:45 AM</td>
+			<td>H8774562124</td>
+		  </tr>
+		  <tr>
+			<td>Mobile Bill</td>
+			<td>$44.45</td>
+			<td>01/18/2024, 11:45 AM</td>
+			<td>H8774562123</td>
+		  </tr>
+		</tbody>
+	  </table>
+	</div>
+
+	<div class="transaction-history-link"></div>
+<div class="main-content">
+    <main class="app">
+      <!-- BALANCE -->
+      <div class="balance">
+        <div>
+          <p class="balance__label">Current balance</p>
+		  <p class="balance__date"> As of <span class="date">loading date...</span>
+          </p>
+        </div>
+        <p class="balance__value">$300</p>
+      </div>
+
+      <!-- USERINFO -->
+      <div class="userinfo">
+        <div class="userinfo__row">
+          <div class="userinfo__type userinfo__type--user">User:</div>
+          <div class="userinfo__value userinfo__value--user">User</div>
+        </div>
+        <div class="userinfo__row">
+          <div class="userinfo__type userinfo__type--account-name">Account Name:</div>
+          <div class="userinfo__value userinfo__value--account-name">Account Name</div>
+        </div>
+        <div class="userinfo__row">
+          <div class="userinfo__type userinfo__type--account-number">Account Number:</div>
+          <div class="userinfo__value userinfo__value--account-number">Account Number</div>
+        </div>
+        <div class="userinfo__row">
+          <div class="userinfo__type userinfo__type--account-type">Account Type:</div>
+          <div class="userinfo__value userinfo__value--account-type">Account Type</div>
+        </div>
+        <div class="userinfo__row">
+          <div class="userinfo__type userinfo__type--account-balance">Account Balance:</div>
+          <div class="userinfo__value userinfo__value--account-balance">$300</div>
+        </div>
+        <div class="userinfo__row">
+          <div class="userinfo__type userinfo__type--created-at">Created at:</div>
+          <div class="userinfo__value userinfo__value--created-at">Created at</div>
+        </div>
+      </div>
+
+      <div class="operation operation--transfer">
+        <h2>Transfer money</h2>
+        <form class="form form--transfer">
+          <select name="transfer_type" class="form__input form__input--select">
+            <option value="deposit">Deposit</option>
+            <option value="payment">Payment</option>
+            <option value="interac">Interac</option>
+          </select>
+        </form>
+          <div class="form form--transfer-inner">
+		    <!-- DEPOSIT OPTION -->
+            <div class="form form--transfer-deposit">
+              <label class="form__label">Amount</label>
+              <input type="number" class="form__input form__input--amount" />
+              <label class="form__label">Deposit into</label>
+              <select name="deposit_info" class="form__input form__input--select">
+			  <option value="chequing">Chequing</option>
+                <option value="saving">Saving</option>
+                <option value="business">Business</option>
+                <!-- Deposit info options will be generated based on the user's accounts -->
+              </select>
+              <button class="form__btn form__btn--transfer">&rarr;</button>
+            </div>
+
+			
+			<!-- Payment -->
+            <div class="form form--transfer-payment hidden">
+              <label class="form__label">Beneficiary Number</label>
+              <input type="number" class="form__input form__input--beneficiary-number" placeholder="" />
+              
+              <label class="form__label">Account Number</label>
+              <input type="number" class="form__input form__input--account-number" placeholder="" />
+              
+              <label class="form__label">Account Type</label>
+              <select name="payment_account" class="form__input form__input--payment-account">
+                <option value="chequing">Chequing</option>
+                <option value="saving">Saving</option>
+                <option value="business">Business</option>
+              </select>
+              
+              <label class="form__label">Reference Number</label>
+              <input type="text" class="form__input form__input--reference-number" placeholder="" />
+              
+              <label class="form__label">Amount</label>
+              <input type="number" class="form__input form__input--amount" placeholder="" />
+              
+              <button class="form__btn form__btn--transfer">&rarr;</button>
+            </div>
+			
+			<!-- Interac -->
+			<div class="form form--transfer-interac hidden">
+				<label class="form__label">From Account</label>
+				<select name="interac_from_account" class="form__input form__input--select">
+					<option value="chequing">Chequing</option>
+					<option value="saving">Saving</option>
+					<option value="business">Business</option>
+				</select>
+
+			  <label class="form__label">Recipient's Account Number</label>
+			  <input type="number" class="form__input form__input--account-number" placeholder="" />
+
+			  <label class="form__label">Recipient's Email ID</label>
+			  <input type="email" class="form__input form__input--email-id" placeholder="" />
+
+			  <button class="form__btn form__btn--transfer">&rarr;</button>
+			</div>
+        </div>
+      </div>
+      
+	</div>
+ 
+    </main>
+     <!-- Add the script tag at the end of the body element to ensure the DOM is fully loaded before executing the script -->
+     <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        // Function to format the current date as MM/DD/YYYY
+        function getCurrentFormattedDate() {
+            const now = new Date();
+            const day = ('0' + now.getDate()).slice(-2);
+            const month = ('0' + (now.getMonth() + 1)).slice(-2);
+            const year = now.getFullYear();
+            return month + '/' + day + '/' + year;
+        }
+
+        // Update the balance date to the current date
+        const balanceDateElement = document.querySelector('.balance__date .date');
+        balanceDateElement.textContent = getCurrentFormattedDate();
+
+    // Handling the transfer form types...
+    const transferFormSelect = document.querySelector('.form--transfer .form__input--select');
+    const depositForm = document.querySelector('.form--transfer-deposit');
+    const paymentForm = document.querySelector('.form--transfer-payment');
+    const interacForm = document.querySelector('.form--transfer-interac');
+
+    transferFormSelect.addEventListener('change', () => {
+      switch (transferFormSelect.value) {
+        case 'deposit':
+          depositForm.classList.add('visible');
+          paymentForm.classList.remove('visible');
+          interacForm.classList.remove('visible');
+          break;
+        case 'payment':
+          paymentForm.classList.add('visible');
+          depositForm.classList.remove('visible');
+          interacForm.classList.remove('visible');
+          break;
+        case 'interac':
+          interacForm.classList.add('visible');
+          depositForm.classList.remove('visible');
+          paymentForm.classList.remove('visible');
+          break;
+        default:
+          depositForm.classList.remove('visible');
+          paymentForm.classList.remove('visible');
+          interacForm.classList.remove('visible');
+          break;
+      }
+    });
+
+    // Initialize with one form visible if needed
+    depositForm.classList.add('visible');
+
+    // Toggling visibility for Payment History and Dashboard
+    const dashboardLink = document.getElementById('dashboard-link');
+    const paymentHistoryLink = document.getElementById('payment-history-link');
+	const transactionHistoryLink = document.getElementById('transaction-history-link');
+    const mainContent = document.querySelector('.main-content');
+
+    dashboardLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      // Remove 'hidden' class to show the content
+      mainContent.classList.remove('hidden');
+	  document.querySelector('.payment-history-link').classList.add('hidden');
+	  
+    });
+
+    paymentHistoryLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      // Add 'hidden' class to hide the content
+      mainContent.classList.add('hidden');
+	  document.querySelector('.payment-history-link').classList.remove('hidden');
+    });
+	
+    transactionHistoryLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      // Add 'hidden' class to hide the content
+      mainContent.classList.add('hidden');
+	  document.querySelector('.payment-history-link').classList.add('hidden');
+    });
+	document.querySelector('.payment-history-link').classList.add('hidden');
+  });
+</script>
+
+
+    </script>
+  </body>
+</html>
