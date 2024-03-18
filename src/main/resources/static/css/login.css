@@ -158,3 +158,25 @@ input {
 	height: 40px;
 	width: 40px;
 }
+/* Add Employ Login Button */
+.employ-login-button {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+
+.employ-login-button {
+	background-color: #008CBA;
+	color: #FFFFFF;
+	border-radius: 20px;
+	border: none;
+	padding: 10px 20px;
+	margin-top: 20px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+
+}
+
+.employ-login-button:hover {
+	background-color: #006D9C;
+}

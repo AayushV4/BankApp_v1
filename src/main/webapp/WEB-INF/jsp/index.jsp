@@ -12,6 +12,7 @@
         <div class="buttons">
             <a href="/register" class="btn">Register</a>
             <a href="/login" class="btn">Login</a>
+            <button class="btn employ-login-button" onclick="window.location.href='/employ_login';">Employ Login</button>
         </div>
     </div>
 </body>
