@@ -1,22 +1,23 @@
 package com.my_bank_v1.BankApp_v1.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.validation.constraints.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "User")
 public class User {
 
     @Id
     private int user_id;
-    @NotEmpty(message = "The first name field cannot be empty")
-    @Size(min=3)
+
     private String first_name;
-    @NotEmpty
-    @Size(min=3)
+
     private String last_name;
     @Email
     @NotEmpty

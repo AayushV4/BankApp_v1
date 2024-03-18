@@ -34,13 +34,7 @@ public class IndexController {
         getemployeePage.addObject("PageTitle","employee");
         return getemployeePage;
     }
-    @GetMapping("/employ_login")
-    public ModelAndView getemploy_Login(){
-        ModelAndView getemploy_loginLoginPage = new ModelAndView("employ_login");
-        System.out.println("In Employ Login Page Controller");
-        getemploy_loginLoginPage.addObject("PageTitle","employ_login");
-        return getemploy_loginLoginPage;
-    }
+
 
 
     @GetMapping("/error")
