@@ -1,6 +1,7 @@
 package com.my_bank_v1.BankApp_v1.repository;
 
 import com.my_bank_v1.BankApp_v1.models.User;
+import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -10,6 +11,18 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
+
+    @Query(value = "SELECT email FROM users WHERE email = :email", nativeQuery = true)
+    String getUserEmail(@Param("email")String email);
+
+    @Query(value = "SELECT password FROM users WHERE email = :email", nativeQuery = true)
+    String getUserPassword(@Param("email")String email);
+
+    @Query(value = "SELECT verified FROM users WHERE email = :email", nativeQuery = true)
+    int isVerified(@Param("email")String email);
+
+    @Query(value = "SELECT * FROM users WHERE email = :email", nativeQuery = true)
+    User getUserDetails(@Param("email")String email);
 
     @Modifying
     @Query(value = "INSERT INTO users (first_name, last_name, email, password, token, code) VALUES" +

@@ -373,6 +373,23 @@ h2 {
   transition: opacity 0.3s ease-in-out;
 }
 
+.form--transfer-trans{
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  box-sizing: border-box;
+  border: 0px solid #ccc;
+  border-radius: 10px;
+  background: linear-gradient(0deg, rgba(253,187,45,1) 17%, rgba(176,73,192,1) 100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .operation--add-account {
   display: none;
   background-image: linear-gradient(to top left, #39b385, #9be15d);
@@ -389,6 +406,11 @@ h2 {
   pointer-events: all;
 }
 
+.form--transfer-trans.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
 .operation--add-account.visible,
 .operation--close.visible {
   display: block;
@@ -396,3 +418,36 @@ h2 {
   pointer-events: all;
 }
 
+
+.payment-history-link {
+  display: none; /* Start with the table hidden */
+  text-align: center;
+  margin-top:20vh;
+}
+.payment-history-table {
+  margin: 2rem auto;
+  width: auto;
+  max-width: 90%; /* Adjust based on preference */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  background: linear-gradient(0deg, rgba(253,187,45,1) 17%, rgba(176,73,192,1) 100%);
+  border-radius: 10px;
+}
+
+.payment-history-table th,
+.payment-history-table td {
+ padding: 1.5rem;
+  border: 1px solid #eaeaea; /* Light border for each cell */
+  font-size: 1.5rem;
+  color: #333; /* Text color */
+}
+}
+
+.payment-history-table th {
+  background-color: #ffb003; /* Header background color */
+  color: white; /* Header text color */
+}
+
+.payment-history-link:not(.hidden) {
+  display: block; /* Show the table when not hidden */
+}

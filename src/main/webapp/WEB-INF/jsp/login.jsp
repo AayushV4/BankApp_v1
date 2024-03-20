@@ -1,3 +1,7 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,15 +22,32 @@
             </c:if>
             <!-- End of Display Message -->
 
-            <form action="#">
+            <!-- Display Message -->
+            <c:if test="${requestScope.error != null}">
+                <div class="alert alert-danger text-center border border-danger">
+                    <b>${requestScope.error}</b>
+                </div>
+            </c:if>
+            <!-- End of Display Message -->
+
+            <!-- Display Message -->
+            <c:if test="${logged_out != null}">
+                <div class="alert alert-info text-center border border-info">
+                    <b>${logged_out}</b>
+                </div>
+            </c:if>
+            <!-- End of Display Message -->
+
+            <form action="/login" method="POST">
                 <h1>Login</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fa fa-facebook fa-2x"></i></a>
                     <a href="#" class="social"><i class="fa fa-twitter fa-2x"></i></a>
                 </div>
                 <span>or use your account</span>
-                <input type="email" placeholder="Email" />
-                <input type="password" placeholder="Password" />
+                <input type="email" name="email" placeholder="Email" />
+                <input type="password" name="password" placeholder="Password" />
+                <input type="hidden" name="_token" value="${token}" />
                 <a href="#" class="forget">Forgot your password?</a>
                 <button type="submit">Log In</button>
                 <!-- Create My Account Button -->

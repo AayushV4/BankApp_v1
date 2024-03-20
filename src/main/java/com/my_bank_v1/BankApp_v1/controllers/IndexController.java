@@ -20,6 +20,7 @@ public class IndexController {
         return getIndexPage;
     }
 
+/**
     @GetMapping("/login")
     public ModelAndView getLogin(){
         ModelAndView getLoginPage = new ModelAndView("login");
@@ -27,6 +28,7 @@ public class IndexController {
         getLoginPage.addObject("PageTitle","Login");
         return getLoginPage;
     }
+ **/
 
 
     @GetMapping("/error")
