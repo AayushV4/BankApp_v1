@@ -10,18 +10,16 @@
 
 <body>
 <div class="container">
-    <!-- Employee Dashboard -->
     <h1 class="employee-header">Employee Dashboard</h1>
-    <!-- Button group -->
     <div class="button-group">
         <button onclick="showData('customer-details')" id="customer-details-btn" class="selected">Customer
             Details</button>
-        <button onclick="showData('daily-tasks')" id="daily-tasks-btn">Daily Tasks</button>
+        <button onclick="showData('weekly-tasks')" id="weekly-tasks-btn">Weekly Tasks</button>
+
         <button onclick="showData('schedule')" id="schedule-btn">Schedule</button>
         <button onclick="showData('employee-profile')" id="employee-profile-btn">Employee Profile</button>
     </div>
 
-    <!-- Customer Details Table -->
     <div class="data-table" id="customer-details">
         <h1 class="customer-number">Total Customers: 11</h1>
         <div class="search-container">
@@ -35,8 +33,8 @@
 
         <div id="search-result"></div>
         <table id="customer-details-table">
-            <tr class="header-row">
-                <th>Account Number</th>
+            <tr>
+                <th >Account Number</th>
                 <th>Name</th>
                 <th class="mobile-none">Email</th>
                 <th class="mobile-none">Phone</th>
@@ -48,87 +46,284 @@
                 <td class="mobile-none">john@example.com</td>
                 <td class="mobile-none">123-456-7890</td>
                 <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
-            </tr>
-            <!-- Add more rows here -->
-        </table>
-    </div>
-
-    <!-- Daily Tasks Table -->
-    <div class="data-table" id="daily-tasks">
-        <h1>Daily Tasks</h1>
-        <table id="daily-tasks-table">
-            <tr class="header-row">
-                <th>Task No</th>
-                <th>Task</th>
-                <th class="mobile-none">Deadline</th>
-                <th>Status</th>
+                <!-- Add a button to open the modal -->
             </tr>
             <tr>
-                <td>1</td>
-                <td>Complete project report</td>
-                <td class="mobile-none">2024-03-10</td>
-                <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
-            </tr>
-            <!-- Add more rows here -->
-        </table>
-    </div>
-
-    <!-- Schedule Table -->
-    <div class="data-table" id="schedule">
-        <h1>Schedule</h1>
-        <table id="schedule-table">
-            <tr class="header-row">
-                <th>Schedule No</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Location</th>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td class="mobile-none">jane@example.com</td>
+                <td class="mobile-none">987-654-3210</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
             </tr>
             <tr>
-                <td>1</td>
-                <td>2024-03-10</td>
-                <td>9:00 AM - 5:00 PM</td>
-                <td>Office</td>
+                <td>3</td>
+                <td>Michael Johnson</td>
+                <td class="mobile-none">michael@example.com</td>
+                <td class="mobile-none">555-123-4567</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
             </tr>
-            <!-- Add more rows here -->
+            <tr>
+                <td>4</td>
+                <td>Alice Johnson</td>
+                <td class="mobile-none">alice@example.com</td>
+                <td class="mobile-none">555-987-6543</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Emily Brown</td>
+                <td class="mobile-none">emily@example.com</td>
+                <td class="mobile-none">555-222-3333</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>David Lee</td>
+                <td class="mobile-none">david@example.com</td>
+                <td class="mobile-none">555-444-5555</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Sarah White</td>
+                <td class="mobile-none">sarah@example.com</td>
+                <td class="mobile-none">555-777-8888</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Robert Davis</td>
+                <td class="mobile-none">robert@example.com</td>
+                <td class="mobile-none">555-999-0000</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Michelle Clark</td>
+                <td class="mobile-none">michelle@example.com</td>
+                <td class="mobile-none">555-111-2222</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Christopher Martinez</td>
+                <td class="mobile-none">christopher@example.com</td>
+                <td class="mobile-none">555-333-4444</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Elizabeth Wilson</td>
+                <td class="mobile-none">elizabeth@example.com</td>
+                <td class="mobile-none">555-555-6666</td>
+                <td><button onclick="openModal('bank')" class="modal-button">Details</button></td>
+            </tr>
         </table>
     </div>
-
-    <!-- Employee Profile -->
-    <div class="data-table employee-profile" id="employee-profile">
-        <h1>Employee Profile</h1>
-        <div class="profile-details">
-            <div class="profile-image">
-                <!-- Employee image goes here -->
-                <img src="./images/employee.png" alt="Employee Image">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="customer-modal">
+                <div class="customer-modal-left">
+                    <img class="modal-img" src="./images/employee.png" alt="">
+                </div>
+                <div class="customer-modal-right">
+                    <h2>Name: John Doe</h2>
+                    <p>Designation: Project Manager</p>
+                    <p>Address: 123 Street, City, Country</p>
+                    <p>Email: john@example.com</p>
+                    <p>Phone: 123-456-7890</p>
+                </div>
             </div>
-            <div class="profile-info">
-                <h2>Name: John Doe</h2>
-                <p>Designation: Project Manager</p>
-                <p>Address: 123 Street, City, Country</p>
-                <p>Email: john@example.com</p>
-                <p>Phone: 123-456-7890</p>
-                <!-- Additional details can be added here -->
-            </div>
-        </div>
-        <div class="task-stats">
-            <div class="task-stat">
-                <h3>Total Tasks</h3>
-                <p>10</p>
-            </div>
-            <div class="task-stat">
-                <h3>Completed Tasks</h3>
-                <p>0</p>
-            </div>
-            <div class="task-stat">
-                <h3>Tasks Pending</h3>
-                <p>10</p>
-            </div>
-        </div>
-        <div class="performance-graph">
-            <!-- Performance graph goes here -->
-            <!-- Placeholder for the performance graph -->
+            <p id="modal-text"></p>
         </div>
     </div>
+</div>
+<!-- Weekly Tasks  -->
+<div class="data-table" id="weekly-tasks">
+    <div class="task-stats">
+        <p>Total Tasks: <span id="total-tasks">10</span></p>
+        <p>Completed: <span id="completed-tasks">0</span></p>
+        <p>Pending: <span id="pending-tasks">10</span></p>
+    </div>
+    <table id="task-table">
+        <tr>
+            <th>Task No</th>
+            <th>Task</th>
+            <th class="mobile-none">Deadline</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Complete project report</td>
+            <td class="mobile-none">2024-03-10</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Attend team meeting</td>
+            <td class="mobile-none">2024-03-11</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Review project proposal</td>
+            <td class="mobile-none">2024-03-12</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Prepare presentation</td>
+            <td class="mobile-none">2024-03-13</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Submit expense report</td>
+            <td class="mobile-none">2024-03-14</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Call client for follow-up</td>
+            <td class="mobile-none">2024-03-15</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Prepare agenda for meeting</td>
+            <td class="mobile-none">2024-03-16</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Review marketing strategy</td>
+            <td class="mobile-none">2024-03-17</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Update project timeline</td>
+            <td class="mobile-none">2024-03-18</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Send follow-up emails</td>
+            <td class="mobile-none">2024-03-19</td>
+            <td><button onclick="toggleTaskStatus(this)" class="status-button pending">Pending</button></td>
+        </tr>
+    </table>
+</div>
+
+<!-- schedule part  -->
+<div class="data-table" id="schedule">
+    <table>
+        <tr>
+            <th>Schedule No</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Location</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2024-03-10</td>
+            <td>9:00 AM - 5:00 PM</td>
+            <td>Office</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>2024-03-12</td>
+            <td>10:00 AM - 6:00 PM</td>
+            <td>Client site</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>2024-03-15</td>
+            <td>8:00 AM - 4:00 PM</td>
+            <td>Conference room</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>2024-03-18</td>
+            <td>11:00 AM - 3:00 PM</td>
+            <td>Training center</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>2024-03-20</td>
+            <td>9:00 AM - 1:00 PM</td>
+            <td>Remote</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>2024-03-22</td>
+            <td>2:00 PM - 6:00 PM</td>
+            <td>Customer site</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2024-03-25</td>
+            <td>10:00 AM - 4:00 PM</td>
+            <td>Virtual</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>2024-03-28</td>
+            <td>8:00 AM - 12:00 PM</td>
+            <td>Office</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>2024-03-30</td>
+            <td>3:00 PM - 7:00 PM</td>
+            <td>Conference room</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>2024-04-01</td>
+            <td>9:00 AM - 5:00 PM</td>
+            <td>Client site</td>
+        </tr>
+    </table>
+</div>
+<!-- Employee Profile section -->
+<div class="data-table employee-profile" id="employee-profile">
+
+    <div class="profile-details">
+        <div class="profile-image">
+            <!-- Employee image goes here -->
+            <img src="./images/employee.png" alt="Employee Image">
+        </div>
+        <div class="profile-info">
+            <h2>Name: John Doe</h2>
+            <p>Designation: Project Manager</p>
+            <p>Address: 123 Street, City, Country</p>
+            <p>Email: john@example.com</p>
+            <p>Phone: 123-456-7890</p>
+            <!-- Additional details can be added here -->
+        </div>
+    </div>
+    <div class="task-stats">
+        <div class="task-stat">
+            <h3>Total Tasks</h3>
+            <p>10</p>
+        </div>
+        <div class="task-stat">
+            <h3>Completed Tasks</h3>
+            <p>0</p>
+        </div>
+        <div class="task-stat">
+            <h3>Tasks Pending</h3>
+            <p>10</p>
+        </div>
+    </div>
+    <div class="performance-graph">
+        <!-- Performance graph goes here -->
+        <!-- Placeholder for the performance graph -->
+    </div>
+</div>
+
 
 </div>
 
@@ -179,14 +374,13 @@
 
         // Get the table and its rows
         var table = document.getElementById('customer-details-table');
-        var rows = table.getElementsByTagName('tr');
+        var rows = Array.from(table.getElementsByTagName('tr'));
 
         // Remove the header row from the sorting process
-        var header = rows[0];
-        var restOfRows = Array.from(rows).slice(1);
+        var header = rows.shift();
 
         // Sort the rows based on the ID column
-        restOfRows.sort(function (row1, row2) {
+        rows.sort(function (row1, row2) {
             var id1 = parseInt(row1.cells[0].textContent || row1.cells[0].innerText);
             var id2 = parseInt(row2.cells[0].textContent || row2.cells[0].innerText);
             return ascendingOrder ? id1 - id2 : id2 - id1;
@@ -195,7 +389,7 @@
         // Re-append the sorted rows to the table
         table.innerHTML = '';
         table.appendChild(header);
-        restOfRows.forEach(function (row) {
+        rows.forEach(function (row) {
             table.appendChild(row);
         });
     }
@@ -230,19 +424,45 @@
 
     }
 
-    // for daily tasks
+    // for Weekly tasks
+    // By default, set the initial task counts
+    var totalTasks = 10;
+    var completedTasks = 0;
+    var pendingTasks = 10;
+
+    // Update task counts in the UI
+    document.getElementById('total-tasks').textContent = totalTasks;
+    document.getElementById('completed-tasks').textContent = completedTasks;
+    document.getElementById('pending-tasks').textContent = pendingTasks;
+
     function toggleTaskStatus(button) {
+        // Toggle the task status button text and background color
         if (button.textContent === 'Pending') {
             button.textContent = 'Completed';
             button.classList.remove('pending');
             button.classList.add('completed');
+
+            // Update task counts
+            completedTasks++;
+            pendingTasks--;
+
+            // Update task counts in the UI
+            document.getElementById('completed-tasks').textContent = completedTasks;
+            document.getElementById('pending-tasks').textContent = pendingTasks;
         } else {
             button.textContent = 'Pending';
             button.classList.remove('completed');
             button.classList.add('pending');
+
+            // Update task counts
+            completedTasks--;
+            pendingTasks++;
+
+            // Update task counts in the UI
+            document.getElementById('completed-tasks').textContent = completedTasks;
+            document.getElementById('pending-tasks').textContent = pendingTasks;
         }
     }
-
     // for customers details
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -266,7 +486,10 @@
         }
     }
 </script>
-
 </body>
 
 </html>
+
+<style>
+
+</style>

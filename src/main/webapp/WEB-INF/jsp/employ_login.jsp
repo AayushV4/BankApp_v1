@@ -32,7 +32,7 @@
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-right">
-                <h1>MyBank | Login to Wallet</h1><p>Best Banking Services</p>
+                <h1>MyBank | Employ Login </h1><p>Best Banking Services</p>
             </div>
         </div>
     </div>

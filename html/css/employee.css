@@ -138,7 +138,7 @@ th {
     margin-bottom: 20px;
 }
 
-/* for daily tasks  */
+/* for Weekly tasks  */
 /* Updated CSS styles */
 .status-button {
     padding: 5px 10px;
@@ -341,9 +341,9 @@ th {
         margin-right: 20px;
         margin-left: 10px;
     }
-.customer-details-table tr{
-    background-color: rebeccapurple;
-}
+    .customer-details-table tr{
+        background-color: rebeccapurple;
+    }
     .modal-content {
         background-color: #fefefe;
         margin: 15% auto;
@@ -408,7 +408,7 @@ th {
         font-weight: bold;
     }
 
-  
+
     .searching {
         display: flex;
         gap: 0.5rem;
@@ -477,9 +477,9 @@ th {
         margin-top: 20px;
         margin-bottom: 10px;
     }
-.status-button{
-    margin-right: 10px;
-}
+    .status-button{
+        margin-right: 10px;
+    }
     .task-stat {
         text-align: center;
     }
