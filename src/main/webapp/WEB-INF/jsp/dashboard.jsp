@@ -97,6 +97,7 @@
         <h2>Transfer money</h2>
         <form class="form form--transfer">
           <select name="transfer_type" class="form__input form__input--select">
+            <option value="Choose">Choose</option>
             <option value="deposit">Deposit</option>
             <option value="payment">Payment</option>
             <option value="transfer">Transfer</option>
@@ -216,7 +217,7 @@
       </div>
 
 
-      <!-- OPERATION: CLOSE -->
+      <!-- OPERATION: CLOSE
       <!-- <div class="operation operation--close">-->
         <div class="operation operation--close hidden">
         <h2>Close account</h2>
@@ -232,7 +233,7 @@
           <label class="form__label">Confirm PIN</label>
         </form>
       </div>
-
+        -->
 
     </main>
 
@@ -274,7 +275,7 @@
               transferForm.classList.remove('visible');
               paymentForm.classList.add('visible');
             } else if (formType.value === 'transfer') {
-              addAccountForm.classList.add('visible');
+              addAccountForm.classList.remove('visible');
               closeForm.classList.remove('visible');
               depositForm.classList.remove('visible');
               paymentForm.classList.remove('visible');
@@ -291,9 +292,9 @@
         });
 
         // Initialize the form visibility
-        depositForm.classList.add('visible');
-        paymentForm.classList.add('visible');
-        transferForm.classList.add('visible');
+        depositForm.classList.remove('visible');
+        paymentForm.classList.remove('visible');
+        transferForm.classList.remove('visible');
         addAccountForm.classList.add('visible');
         closeForm.classList.add('visible');
 

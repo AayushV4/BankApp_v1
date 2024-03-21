@@ -35,9 +35,10 @@
     </header>
 
     <main class="app">
-            <div class="card-body">
+            <div class="payment-history-link">
                 <c:if test="${requestScope.transact_history != null}">
-                    <table class="table text-center table-striped">
+                    <table class="payment-history-table">
+                    <thead>
                     <tr>
                         <th>Transaction ID</th>
                         <th>Transaction Type</th>
@@ -47,6 +48,8 @@
                         <th>Reason Code</th>
                         <th>Created at</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     <c:forEach items="${requestScope.transact_history}" var="transactionHistory">
                       <tr>
                           <td>${transactionHistory.transaction_id}</td>
@@ -58,6 +61,7 @@
                           <td>${transactionHistory.created_at}</td>
                       </tr>
                     </c:forEach>
+                    </tbody>
                     </table>
                 </c:if>
             </div>
