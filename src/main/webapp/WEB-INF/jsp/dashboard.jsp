@@ -218,7 +218,7 @@
 
 
       <!-- OPERATION: CLOSE
-      <!-- <div class="operation operation--close">-->
+       <div class="operation operation--close">
         <div class="operation operation--close hidden">
         <h2>Close account</h2>
         <form class="form form--close">
