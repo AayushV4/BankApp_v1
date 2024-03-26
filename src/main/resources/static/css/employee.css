@@ -1,0 +1,501 @@
+.userinfo__type--user {
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+
+.userinfo__type--account-name {
+    background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+.container {
+    margin: 20px;
+    max-width: 1200px;
+    /* Set maximum width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.employee-header {
+    text-align: center;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: #444;
+    background-color: #f3f3f3;
+    padding: 1rem;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    /* Allow buttons to wrap on smaller screens */
+}
+
+.button-group button {
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+    font-size: 1rem;
+    /* Adjust font size for better fit */
+    text-transform: uppercase;
+    font-weight: 500;
+    color: #fff;
+    padding: 10px 15px;
+    /* Adjust padding for smaller buttons */
+    border: none;
+    border-radius: 10rem;
+    margin-bottom: 10px;
+    /* Add some space between buttons */
+}
+
+.button-group button.selected {
+    background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    /* Adjust border radius for a softer look */
+    background-color: white;
+}
+
+th,
+td {
+    border-bottom: 1px solid #907434;
+    padding: 15px 0px;
+    /* Adjust padding for better spacing */
+    text-align: center;
+    font-size: 16px;
+    /* Adjust font size for better readability */
+    background-color: white;
+}
+
+th {
+    background-color: white;
+}
+
+.data-table {
+    display: none;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-response {
+    text-align: center;
+    margin: 20px;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.search-input {
+    width: 30rem;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.search-button {
+    background-color: #39b385;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.order-button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-button:hover {
+    background-color: #45a049;
+    /* Darker green */
+}
+
+.customer-number {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* for Weekly tasks  */
+/* Updated CSS styles */
+.status-button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.pending {
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+}
+
+.completed {
+    background-image: linear-gradient(to top left, #39b385, #9be15d);
+    border-radius: 10px;
+    color: white;
+}
+
+.task-stats p span {
+    font-weight: bold;
+}
+
+.task-stats p span#completed-tasks {
+    color: green;
+}
+
+.task-stats p span#pending-tasks {
+    color: red;
+}
+
+.task-stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    font-weight: 600px;
+    margin-bottom: 20px;
+}
+
+/* employee profile  */
+/* CSS for Employee Profile section */
+.employee-profile {
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.profile-details {
+    display: flex;
+    background-color: white;
+    padding: 20px 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+}
+
+.profile-image {
+    width: 40%;
+}
+
+.profile-image img {
+    width: 100%;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.profile-info {
+    width: 60%;
+    margin-left: 8rem;
+}
+
+.profile-info h2 {
+    font-size: 28px;
+}
+
+.profile-info p {
+    font-size: 25px
+}
+
+
+.task-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 20px;
+
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.task-stat {
+    text-align: center;
+}
+
+.task-stat h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.task-stat p {
+    font-size: 25px;
+    color: #333;
+}
+
+.performance-graph {
+    margin-top: 20px;
+    /* Add styles for the performance graph */
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    border-radius: 10px;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.modal-button {
+    background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+}
+
+/* Close button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.customer-modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customer-modal-left {
+    width: 40%;
+}
+
+.customer-modal-right {
+    width: 60%;
+    margin-left: 30px;
+}
+
+#modal-text {
+    display: none;
+}
+
+.modal-img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .customer-modal-right h2,
+    p {
+        font-size: 16px;
+    }
+
+    .modal-button {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+    .customer-details-table tr{
+        background-color: rebeccapurple;
+    }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        border-radius: 10px;
+        /* 15% from the top and centered */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        /* Could be more or less, depending on screen size */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .customer-modal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .customer-modal-left {
+        width: 100%;
+    }
+
+    .customer-modal-right {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #modal-text {
+        display: none;
+    }
+
+    .modal-img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .button-group button {
+        font-size: 0.9rem;
+        /* Further reduce font size for smaller screens */
+        padding: 8px 12px;
+        /* Adjust padding for smaller buttons */
+        margin-right: 5px;
+        /* Reduce margin between buttons */
+    }
+
+    table {
+        width: auto;
+        /* Set width to auto for mobile devices */
+    }
+
+    .search-container {
+        text-align: center;
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .search-response {
+        text-align: center;
+        margin: 20px;
+        color: red;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+
+    .searching {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .search-input {
+        width: 15rem;
+        border-radius: 10px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .order-button {
+        display: none;
+    }
+
+    .mobile-none {
+        display: none;
+    }
+
+    /* employee profile  */
+    /* CSS for Employee Profile section */
+    .employee-profile {
+        padding: 20px;
+        border-radius: 10px;
+        margin-top: 20px;
+    }
+
+    .profile-details {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 20px 30px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        align-items: center;
+        display: flex;
+    }
+
+    .profile-image {
+        width: 100%;
+    }
+
+    .profile-image img {
+        width: 100%;
+        border-radius: 10px;
+        margin-right: 0;
+    }
+
+    .profile-info {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .profile-info h2 {
+        font-size: 16px;
+    }
+
+    .profile-info p {
+        font-size: 15px
+    }
+
+
+    .task-stats {
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .status-button{
+        margin-right: 10px;
+    }
+    .task-stat {
+        text-align: center;
+    }
+
+    .task-stat h3 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+
+    .task-stat p {
+        font-size: 20px;
+        color: #333;
+    }
+
+    .performance-graph {
+        margin-top: 20px;
+        /* Add styles for the performance graph */
+    }
+}

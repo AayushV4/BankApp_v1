@@ -7,7 +7,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
-
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @ComponentScan(basePackages = {"com.my_bank_v1.BankApp_v1"})
 public class AppConfig extends WebMvcConfigurationSupport {
@@ -27,6 +29,10 @@ public class AppConfig extends WebMvcConfigurationSupport {
         jspViewResolver.setViewClass(JstlView.class);
 
         return jspViewResolver;
+    }
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
     //End of View Resolver
 }
