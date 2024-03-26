@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <link rel="stylesheet" href="css/employ_login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+YjJUJdTHt0oqNS UutHgJ8HJl0s3FNWULsfQ+KXQAP+du6dTqlQ5mulWuZlX5vca0fo+aHXDrr2gYgTf will be here" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>MyBank | Employ Login</title>
 </head>
 <body>
@@ -18,12 +18,13 @@
         </c:if>
         <!-- End of Display Message -->
 
-        <form action="#">
+        <form action="/employ_login" method="post">
             <h1>Login</h1>
 
             <span>or use your account</span>
-            <input type="email" placeholder="Email" />
-            <input type="password" placeholder="Password" />
+            <input type="email" name="email" placeholder="Email" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="hidden" name="_token" value="${token}" />
             <a href="#" class="forget">Forgot your password?</a>
             <button type="submit">Log In</button>
 
