@@ -142,6 +142,16 @@ nav {
   margin-right: 2rem;
 }
 
+.userinfo__head {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  align-items: center;
+}
+
 .userinfo__value {
   font-size: 1.7rem;
 }
@@ -450,4 +460,24 @@ h2 {
 
 .payment-history-link:not(.hidden) {
   display: block; /* Show the table when not hidden */
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
 }

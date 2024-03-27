@@ -43,12 +43,31 @@
     		  <p class="balance__date"> As of <span class="date">loading date...</span>
               </p>
             </div>
+
+            <!-- Display Message -->
+            <c:if test="${success != null}">
+                <div class="alert alert-info text-center border border-info">
+                    <b>${requestScope.success}</b>
+                </div>
+            </c:if>
+            <!-- End of Display Message -->
+
+            <!-- Display Message -->
+            <c:if test="${requestScope.error != null}">
+                 <div class="alert alert-danger text-center border border-danger">
+                     <b>${requestScope.error}</b>
+                 </div>
+            </c:if>
+            <!-- End of Display Message -->
+
             <p class="balance__value">
+                    $
                 <c:if test="${requestScope.totalBalance != null}">
                     <c:out value="${totalBalance}"/>
                 </c:if>
             </p>
           </div>
+
 
       <!-- USERINFO -->
       <div class="userinfo">
@@ -57,18 +76,14 @@
 
         <c:forEach items="${requestScope.userAccounts}" var="account">
 
-        <h2 class="accordion-header" id="flush-headingOne">
+        <h4>
+        <div class="userinfo__head userinfo__type--user">
             ${account.account_name}
-        </h2>
+        </div>
+        </h4>
 
-        <div class="userinfo__row">
-          <div class="userinfo__type userinfo__type--user">User:</div>
-          <div class="userinfo__value userinfo__value--user">User</div>
-        </div>
-        <div class="userinfo__row">
-          <div class="userinfo__type userinfo__type--account-name">Account Name:</div>
-          <div class="userinfo__value userinfo__value--account-name">${account.account_name}</div>
-        </div>
+
+
         <div class="userinfo__row">
           <div class="userinfo__type userinfo__type--account-number">Account Number:</div>
           <div class="userinfo__value userinfo__value--account-number">${account.account_number}</div>
@@ -82,14 +97,13 @@
           <div class="userinfo__value userinfo__value--account-balance">${account.balance}</div>
         </div>
         <div class="userinfo__row">
-          <div class="userinfo__type userinfo__type--created-at">Created at:</div>
-          <div class="userinfo__value userinfo__value--created-at">${account.created_at}</div>
+          <div class="userinfo__type userinfo__type--created-at">Updated at:</div>
+          <div class="userinfo__value userinfo__value--created-at">${account.updated_at}</div>
         </div>
         </c:forEach>
 
         </c:if>
       </div>
-
 
       <!-- OPERATION: TRANSFERS-->
 
@@ -184,22 +198,6 @@
         </div>
       </div>
 
-                    <!-- Display Message -->
-                    <c:if test="${success != null}">
-                        <div class="alert alert-info text-center border border-info">
-                            <b>${Success}</b>
-                        </div>
-                    </c:if>
-                    <!-- End of Display Message -->
-
-                    <!-- Display Message -->
-                    <c:if test="${requestScope.error != null}">
-                        <div class="alert alert-danger text-center border border-danger">
-                            <b>${requestScope.error}</b>
-                        </div>
-                    </c:if>
-                    <!-- End of Display Message -->
-
       <!-- OPERATION: ADD ACCOUNT -->
       <div class="operation operation--add-account">
         <h2>Add Account</h2>
@@ -217,28 +215,24 @@
       </div>
 
 
-      <!-- OPERATION: CLOSE
+      <!-- OPERATION: CLOSE -->
        <div class="operation operation--close">
-        <div class="operation operation--close hidden">
         <h2>Close account</h2>
-        <form class="form form--close">
-          <input type="text" class="form__input form__input--user" />
-          <input
-            type="password"
-            maxlength="6"
-            class="form__input form__input--pin"
-          />
+        <form action="/account/delete_account" method="POST" class="form form--close">
+          <input type="text" name="account_name" class="form__input form__input--name" placeholder="">
+          <input type="text" name="account_number" class="form__input form__input--name" placeholder="">
           <button class="form__btn form__btn--close">&rarr;</button>
-          <label class="form__label">Confirm user</label>
-          <label class="form__label">Confirm PIN</label>
+          <label class="form__label">Account name</label>
+          <label class="form__label">Account number</label>
         </form>
-      </div>
-        -->
+       </div>
+
 
     </main>
 
      <!-- Add the script tag at the end of the body element to ensure the DOM is fully loaded before executing the script -->
      <script>
+
       // Function to format the date as MM/DD/YYYY
       function formatDate(date) {
         let day = ('0' + date.getDate()).slice(-2);
@@ -301,5 +295,7 @@
 
       });
     </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+z7Gz4arQnXK+02lE5Pbvn9iiHzp9d+OJi4yJ2f" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+5rVFiV8ettf5LBv5ef3y8sh0p/nFMpiDtcEIIu6P1sJQ4VqpFkbz5K5+X" crossorigin="anonymous"></script>
   </body>
 </html>

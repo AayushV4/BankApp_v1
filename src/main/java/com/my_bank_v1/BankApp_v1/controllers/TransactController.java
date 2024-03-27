@@ -199,7 +199,7 @@ public class TransactController {
         paymentRepository.makePayment(acc_id, beneficiary, account_number, paymentAmount, reference, "success", reasonCode, currentDateTime);
 
         // TODO: UPDATE ACCOUNT PAYING FROM:
-        accountRepository.changeAccountBalanceById(newBalance,acc_id );
+        accountRepository.changeAccountBalanceById(newBalance,acc_id);
 
         // Log Successful Transaction:
         transactRepository.logTransaction(acc_id, "Payment", paymentAmount, "online", "success", "Payment Transaction Successful",currentDateTime);
