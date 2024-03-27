@@ -21,13 +21,13 @@
             border: none;
             border-radius: 1rem;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-            background-color: #fff;
+            background-color: #dc3545;
             padding: 2rem;
             text-align: center;
         }
         .card h1 {
             font-size: 2.5rem;
-            color: #4a4a4a;
+            color: white;
             margin-bottom: 1rem;
         }
         .card p {
@@ -35,6 +35,21 @@
             color: #666;
             margin-bottom: 2rem;
         }
+
+       .alert.alert-danger {
+           background-color: #dc3545;
+           color: white;
+           border: 1px solid #dc3545;
+       }
+
+       .alert.alert-danger.text-center {
+           text-align: center;
+       }
+
+       .alert.alert-danger.border.border-danger {
+           border-color: #dc3545;
+       }
+
     </style>
 </head>
 <body>

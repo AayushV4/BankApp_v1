@@ -60,7 +60,7 @@ public class AuthController {
             }
             // End Of Validate Password.
         }else{
-            model.addAttribute("error", "Something went wrong please contact support");
+            model.addAttribute("error", "The Email Does Not Exist, Please Try Again!");
             return "error";
         }
         // Check If Email Exists.
@@ -70,7 +70,7 @@ public class AuthController {
 
         // Check If Account is verified:
         if (verified != 1){
-            String msg = "This Account is not yet Verified, please check email and verify account";
+            String msg = "This Account is not yet Verified, Please Check Email and Verify Account";
             model.addAttribute("error", msg);
             return "login";
         }

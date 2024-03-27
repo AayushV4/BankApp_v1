@@ -36,4 +36,11 @@ public interface AccountRepository extends CrudRepository<Account, Integer> {
                            @Param("account_number") String account_number,
                            @Param("account_name") String account_name,
                            @Param("account_type")String account_type);
+
+    @Modifying
+    @Query(value = "DELETE FROM accounts WHERE user_id = :user_id AND account_number = :account_number AND account_name = :account_name", nativeQuery = true)
+    @Transactional
+    void deleteBankAccount(@Param("user_id") int user_id,
+                           @Param("account_number") String account_number,
+                           @Param("account_name") String account_name);
 }
