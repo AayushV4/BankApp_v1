@@ -50,6 +50,7 @@
                 <input type="hidden" name="_token" value="${token}" />
                 <a href="#" class="forget">Forgot your password?</a>
                 <button type="submit">Log In</button>
+                <button class="employ-login-button" onclick="event.preventDefault(); window.location.href='/employ_login';">Employ Login</button>
                 <!-- Create My Account Button -->
                 <button type="button" onclick="window.location.href='/register';">Create Account</button>
             </form>

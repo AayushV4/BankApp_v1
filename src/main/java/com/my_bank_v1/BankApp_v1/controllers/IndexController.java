@@ -68,6 +68,13 @@ public class IndexController {
         getDashboardPage.addObject("PageTitle","dashboard");
         return getDashboardPage;
     }
+    @GetMapping("/employee")
+    public ModelAndView getemployee(){
+        ModelAndView getemployeePage = new ModelAndView("employee");
+        System.out.println("In employee Page Controller");
+        getemployeePage.addObject("PageTitle","employee");
+        return getemployeePage;
+    }
 
 
 }
